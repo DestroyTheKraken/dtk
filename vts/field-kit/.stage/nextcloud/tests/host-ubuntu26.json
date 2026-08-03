@@ -1,0 +1,66 @@
+{
+  "host_id": "host-ubuntu26",
+  "profile": "Ubuntu 26.04 resolute — bleeding-edge validation",
+  "os": {
+    "pretty_name": "Ubuntu 26.04",
+    "codename": "resolute"
+  },
+  "verified_stack": {
+    "php_series": "8.5",
+    "nextcloud_version": "33.0.5"
+  },
+  "v3_install_plan_match": true,
+  "iterations": [
+    {
+      "timestamp": "2026-06-20T10:00:00-06:00",
+      "installer_version": "2.x",
+      "status": "fail",
+      "notes": "PHP 8.5 + NC 29 mismatch. ondrej PPA failed on resolute. add-apt-repository polluted PHP_SERIES variable."
+    },
+    {
+      "timestamp": "2026-06-20T12:00:00-06:00",
+      "installer_version": "2.x",
+      "status": "partial",
+      "notes": "Switched to NC 33.0.5 native PHP 8.5. Missing bzip2. MariaDB stale password on retry. Apache only on :80."
+    },
+    {
+      "timestamp": "2026-06-20T14:00:00-06:00",
+      "installer_version": "2.x + fix-flat-allowsymlinks",
+      "status": "partial",
+      "notes": "HTTPS via Tailscale serve fixed. Documents/Templates/Photos invisible on mobile — nested allowsymlinks occ key ineffective on NC33."
+    },
+    {
+      "timestamp": "2026-06-20T15:30:00-06:00",
+      "installer_version": "2.x + symlink-guardian",
+      "status": "pass",
+      "notes": "Flat localstorage.allowsymlinks in config.php. php-fpm restart. Mobile client all folders visible. Guardian cron 5 min."
+    },
+    {
+      "timestamp": "2026-06-20T16:00:00-06:00",
+      "installer_version": "3.0.0",
+      "status": "pass",
+      "notes": "v3 install_plan validated: PHP 8.5 + NC 33.0.5, skip_native_only PPA, symlink keys localstorage.allowsymlinks + follow_symlinks."
+    },
+    {
+      "timestamp": "2026-06-20T20:20:00-07:00",
+      "installer_version": "3.0.0",
+      "status": "pass",
+      "phase": "install.sh",
+      "notes": "One-command install after wipe. Phases 1-6 + verify + watcher auto-start. verify 10/10. Watcher /tmp/watch.log. ~5 min total."
+    },
+    {
+      "timestamp": "2026-06-20T19:15:00-07:00",
+      "installer_version": "3.0.0",
+      "status": "pass",
+      "phase": "06+verify",
+      "notes": "Phased v3 install COMPLETE. Mobile sync confirmed all folders visible."
+    },
+    {
+      "timestamp": "2026-06-20T17:30:00-07:00",
+      "installer_version": "3.0.0",
+      "status": "fail",
+      "phase": "01.01",
+      "notes": "Phase 1 SyntaxError: nc_username captured prompt banner text. Fixed: stderr prompts + env JSON write."
+    }
+  ]
+}

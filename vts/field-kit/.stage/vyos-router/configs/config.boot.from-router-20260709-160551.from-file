@@ -1,0 +1,234 @@
+firewall {
+    global-options {
+        state-policy {
+            established {
+                action "accept"
+            }
+            invalid {
+                action "drop"
+            }
+            related {
+                action "accept"
+            }
+        }
+    }
+    group {
+        interface-group LAN {
+            interface "eth2"
+            interface "eth3"
+        }
+        interface-group WAN {
+            interface "eth0"
+        }
+    }
+    ipv4 {
+        forward {
+            filter {
+                default-action "drop"
+                rule 10 {
+                    action "accept"
+                    description "Allow LAN out to Internet only"
+                    inbound-interface {
+                        group "LAN"
+                    }
+                    outbound-interface {
+                        group "WAN"
+                    }
+                }
+            }
+        }
+        input {
+            filter {
+                default-action "drop"
+                rule 10 {
+                    action "accept"
+                    description "GrokOS um690 SSH"
+                    destination {
+                        port "22"
+                    }
+                    protocol "tcp"
+                    source {
+                        address "192.168.20.100"
+                    }
+                }
+                rule 11 {
+                    action "accept"
+                    description "GrokOS um690 Tailscale SSH"
+                    destination {
+                        port "22"
+                    }
+                    protocol "tcp"
+                    source {
+                        address "100.120.232.39"
+                    }
+                }
+                rule 20 {
+                    action "accept"
+                    description "Allow ICMP"
+                    protocol "icmp"
+                }
+            }
+        }
+    }
+}
+interfaces {
+    ethernet eth0 {
+        address "dhcp"
+        description "WAN-Starlink"
+        hw-id "44:8a:5b:dd:a0:23"
+        offload {
+            gro
+            gso
+            sg
+            tso
+        }
+    }
+    ethernet eth2 {
+        address "192.168.10.1/24"
+        description "LAN-HomeNet"
+        hw-id "9c:69:d3:80:a2:09"
+    }
+    ethernet eth3 {
+        address "192.168.20.1/24"
+        description "LAN-LabNet"
+        hw-id "9c:69:d3:81:3b:e2"
+        offload {
+            gro
+        }
+    }
+    loopback lo {
+    }
+    wireless wlan0 {
+        hw-id "b8:8a:60:19:89:30"
+        physical-device "phy0"
+    }
+}
+nat {
+    source {
+        rule 100 {
+            outbound-interface {
+                name "eth0"
+            }
+            source {
+                address "192.168.0.0/16"
+            }
+            translation {
+                address "masquerade"
+            }
+        }
+    }
+}
+service {
+    dhcp-server {
+        shared-network-name HOMENET {
+            subnet 192.168.10.0/24 {
+                option {
+                    default-router "192.168.10.1"
+                    name-server "1.1.1.1"
+                }
+                range 0 {
+                    start "192.168.10.100"
+                    stop "192.168.10.200"
+                }
+                subnet-id "10"
+            }
+        }
+        shared-network-name LABNET {
+            subnet 192.168.20.0/24 {
+                option {
+                    default-router "192.168.20.1"
+                    name-server "1.1.1.1"
+                }
+                range 0 {
+                    start "192.168.20.100"
+                    stop "192.168.20.200"
+                }
+                static-mapping node1 {
+                    ip-address "192.168.20.101"
+                    mac "d8:cb:8a:01:7a:89"
+                }
+                static-mapping node2 {
+                    ip-address "192.168.20.102"
+                    mac "44:8a:5b:dd:a0:c5"
+                }
+                static-mapping um690 {
+                    ip-address "192.168.20.100"
+                    mac "58:47:ca:70:aa:02"
+                }
+                subnet-id "20"
+            }
+        }
+    }
+    ntp {
+        allow-client {
+            address "127.0.0.0/8"
+            address "169.254.0.0/16"
+            address "10.0.0.0/8"
+            address "172.16.0.0/12"
+            address "192.168.0.0/16"
+            address "::1/128"
+            address "fe80::/10"
+            address "fc00::/7"
+        }
+        server time1.vyos.net {
+        }
+        server time2.vyos.net {
+        }
+        server time3.vyos.net {
+        }
+    }
+    ssh {
+        listen-address "192.168.10.1"
+        listen-address "192.168.20.1"
+        port "22"
+    }
+}
+system {
+    config-management {
+        commit-revisions "100"
+    }
+    console {
+        device ttyS0 {
+            speed "115200"
+        }
+    }
+    host-name "vyos-router"
+    login {
+        operator-group default {
+            command-policy {
+                allow "*"
+            }
+        }
+        user vyos {
+            authentication {
+                encrypted-password "$6$rounds=656000$A5Hn57TIx00.iC7s$TCnpSTtGKuMQtKTM5C.vRmxqptgYuXfKN2SdjC8tkY5jow3z4xKBA9Ua5VpW7IhZZ5b2BCAmq37Bc2Nwa.mts."
+                plaintext-password ""
+                public-keys grokos {
+                    key "AAAAC3NzaC1lZDI1NTE5AAAAIIuNIxDK5nTIAUxHJ20/VLIGIpWl8AsQxcHW0YFOMc5x"
+                    type "ssh-ed25519"
+                }
+            }
+        }
+    }
+    name-server "1.1.1.1"
+    name-server "1.0.0.1"
+    option {
+        reboot-on-upgrade-failure "5"
+    }
+    syslog {
+        local {
+            facility all {
+                level "info"
+            }
+            facility local7 {
+                level "debug"
+            }
+        }
+    }
+    time-zone "US/Pacific"
+}
+
+
+// Warning: Do not remove the following line.
+// vyos-config-version: "bgp@7:broadcast-relay@1:cluster@2:config-management@1:conntrack@6:conntrack-sync@2:container@3:dhcp-relay@2:dhcp-server@11:dhcpv6-server@6:dns-dynamic@4:dns-forwarding@4:firewall@20:flow-accounting@3:https@7:ids@2:interfaces@34:ipoe-server@4:ipsec@14:isis@3:l2tp@9:lldp@3:mdns@1:monitoring@2:nat@8:nat66@3:nhrp@1:ntp@3:openconnect@3:openvpn@5:ospf@2:pim@1:pki@1:policy@9:pppoe-server@12:pptp@5:qos@3:quagga@12:reverse-proxy@3:rip@1:rpki@2:snmp@3:ssh@3:sstp@6:system@33:vpp@6:vrf@4:vrrp@4:vyos-accel-ppp@2:wanloadbalance@4:webproxy@2"
+// Release version: 2026.06.24-0045-rolling

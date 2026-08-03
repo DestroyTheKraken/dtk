@@ -1,0 +1,86 @@
+/* Tokyo Night Storm — from valley-tech-support/web/styles/tokyo-night-storm.toml */
+:root {
+  --tn-bg: #24283b;
+  --tn-fg: #c0caf5;
+  --tn-fg-dim: #a9b1d6;
+  --tn-selection: #2e3c64;
+  --tn-black: #1d202f;
+  --tn-red: #f7768e;
+  --tn-green: #9ece6a;
+  --tn-yellow: #e0af68;
+  --tn-blue: #7aa2f7;
+  --tn-magenta: #bb9af7;
+  --tn-cyan: #7dcfff;
+  --tn-bright-black: #414868;
+  --tn-card: #1d202f;
+  --tn-card-border: #414868;
+  --tn-gradient-from: #1d202f;
+  --tn-gradient-to: #24283b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--tn-bg);
+  color: var(--tn-fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.tn-gradient-hero {
+  background: linear-gradient(135deg, var(--tn-gradient-from) 0%, var(--tn-bg) 45%, #2e3c64 100%);
+}
+
+.tn-card {
+  background: var(--tn-card);
+  border: 1px solid var(--tn-card-border);
+  border-radius: 0.75rem;
+}
+
+.tn-btn-primary {
+  background: var(--tn-blue);
+  color: var(--tn-black);
+  font-weight: 600;
+  transition: filter 0.15s ease;
+}
+
+.tn-btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.tn-btn-outline {
+  border: 1px solid var(--tn-blue);
+  color: var(--tn-blue);
+  font-weight: 600;
+}
+
+.tn-btn-outline:hover {
+  background: rgba(122, 162, 247, 0.12);
+}
+
+.tn-accent-green { color: var(--tn-green); }
+.tn-accent-blue { color: var(--tn-blue); }
+.tn-accent-cyan { color: var(--tn-cyan); }
+.tn-accent-magenta { color: var(--tn-magenta); }
+
+.prose-tn h1, .prose-tn h2, .prose-tn h3 {
+  color: var(--tn-fg);
+}
+
+.prose-tn p, .prose-tn li {
+  color: var(--tn-fg-dim);
+}
+
+.prose-tn a {
+  color: var(--tn-cyan);
+}
+
+.prose-tn strong {
+  color: var(--tn-fg);
+}
+
+::selection {
+  background: var(--tn-selection);
+  color: var(--tn-fg);
+}

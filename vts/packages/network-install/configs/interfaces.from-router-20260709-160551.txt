@@ -1,0 +1,30 @@
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface    IP Address         MAC                VRF        MTU  S/L    Description
+-----------  -----------------  -----------------  -------  -----  -----  -------------
+eth0         100.110.57.191/10  44:8a:5b:dd:a0:23  default   1500  u/u    WAN-Starlink
+eth2         192.168.10.1/24    9c:69:d3:80:a2:09  default   1500  u/u    LAN-HomeNet
+eth3         192.168.20.1/24    9c:69:d3:81:3b:e2  default   1500  u/u    LAN-LabNet
+lo           127.0.0.1/8        00:00:00:00:00:00  default  65536  u/u
+             ::1/128
+wlan0        -                  ba:8a:60:19:89:30  default   1500  u/D
+----
+Version:          VyOS 2026.06.24-0045-rolling
+Release train:    rolling
+Release flavor:   generic
+
+Built by:         autobuild@vyos.net
+Built on:         Wed 24 Jun 2026 00:45 UTC
+Build UUID:       397aa1c4-378d-4eb7-aef3-68e0fac6f476
+Build commit ID:  67f7e546477b4f
+
+Architecture:     x86_64
+Boot via:         installed image
+System type:      bare metal
+Secure Boot:      n/a (BIOS)
+
+Hardware vendor:  LENOVO
+Hardware model:   10AB0016US
+Hardware S/N:     MJ01QL4Q
+Hardware UUID:    8adf5ec8-6aa5-11e4-92f3-878871311300
+
+Copyright:        VyOS maintainers and contributors

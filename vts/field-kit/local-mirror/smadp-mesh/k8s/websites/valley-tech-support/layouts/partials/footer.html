@@ -1,0 +1,25 @@
+<footer class="border-t border-tn-border/60 bg-tn-card mt-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-semibold text-tn-fg mb-2">{{ .Site.Title }}</h3>
+        <p class="text-sm text-tn-dim">{{ .Site.Params.description }}</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-tn-fg mb-2">Services</h3>
+        <ul class="text-sm text-tn-dim space-y-1">
+          <li>General IT Support</li>
+          <li>Network & Smart Home</li>
+          <li>Starlink & Rural WiFi</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-tn-fg mb-2">Area Served</h3>
+        <p class="text-sm text-tn-dim">{{ .Site.Params.location }}</p>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-tn-border/40 text-center text-xs text-tn-dim">
+      © {{ now.Year }} {{ .Site.Params.businessName }} · Self-hosted on SMADP
+    </div>
+  </div>
+</footer>

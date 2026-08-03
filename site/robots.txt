@@ -1,0 +1,8 @@
+# Joshua Hickman · Rural IT (studio: Destroy the Kraken)
+# https://www.destroythekraken.com/
+
+User-agent: *
+Allow: /
+
+# Prefer www canonical
+Sitemap: https://www.destroythekraken.com/sitemap.xml

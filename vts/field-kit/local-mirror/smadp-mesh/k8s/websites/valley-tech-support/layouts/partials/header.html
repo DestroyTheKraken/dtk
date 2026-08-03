@@ -1,0 +1,16 @@
+<nav class="sticky top-0 z-50 border-b border-tn-border/60 bg-tn-card/90 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href="{{ "/" | relURL }}" class="flex items-center gap-2 font-semibold text-tn-fg hover:text-tn-cyan transition">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-tn-blue/20 text-tn-blue text-sm font-bold">VT</span>
+        <span>{{ .Site.Title }}</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" class="text-tn-dim hover:text-tn-cyan transition">{{ .Name }}</a>
+        {{ end }}
+        <a href="{{ "/contact/" | relURL }}" class="tn-btn-primary px-4 py-2 rounded-lg text-sm">Get Help</a>
+      </div>
+    </div>
+  </div>
+</nav>

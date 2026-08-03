@@ -1,0 +1,45 @@
+/* Tokyo Night Storm — SMADP Ops Command Center */
+:root {
+  --tn-bg: #24283b;
+  --tn-fg: #c0caf5;
+  --tn-fg-dim: #a9b1d6;
+  --tn-selection: #2e3c64;
+  --tn-black: #1d202f;
+  --tn-green: #9ece6a;
+  --tn-blue: #7aa2f7;
+  --tn-cyan: #7dcfff;
+  --tn-magenta: #bb9af7;
+  --tn-card: #1d202f;
+  --tn-card-border: #414868;
+}
+
+body {
+  background: var(--tn-bg);
+  color: var(--tn-fg);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.tn-hero {
+  background: linear-gradient(135deg, var(--tn-black) 0%, var(--tn-bg) 50%, #2e3c64 100%);
+}
+
+.tn-card {
+  background: var(--tn-card);
+  border: 1px solid var(--tn-card-border);
+  border-radius: 0.75rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tn-card:hover {
+  border-color: var(--tn-blue);
+  transform: translateY(-2px);
+}
+
+.tn-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--tn-selection);
+}

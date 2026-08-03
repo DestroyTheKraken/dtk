@@ -1,0 +1,26 @@
+# Traefik middleware for Nextcloud (Traefik 3.x — one type per Middleware)
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-headers
+  namespace: nextcloud
+  labels:
+    app.kubernetes.io/part-of: smadp
+spec:
+  headers:
+    customRequestHeaders:
+      X-Forwarded-Proto: "https"
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-buffering
+  namespace: nextcloud
+  labels:
+    app.kubernetes.io/part-of: smadp
+spec:
+  buffering:
+    maxRequestBodyBytes: 10737418240
+    memRequestBodyBytes: 2097152
+    maxResponseBodyBytes: 10737418240
+    memResponseBodyBytes: 2097152

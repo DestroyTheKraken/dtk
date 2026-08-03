@@ -1,0 +1,27 @@
+{
+  "host_id": "host-mint24",
+  "profile": "Mint / Ubuntu 24.04 LTS reference",
+  "os": {
+    "pretty_name": "Linux Mint / Ubuntu 24.04",
+    "codename": "noble"
+  },
+  "verified_stack": {
+    "php_series": "8.3",
+    "nextcloud_version": "30.0.5"
+  },
+  "v3_install_plan_match": true,
+  "iterations": [
+    {
+      "timestamp": "2026-06-19T17:00:00-06:00",
+      "installer_version": "2.x",
+      "status": "pass",
+      "notes": "Reference deployment. PHP 8.3 + NC 30.0.5. Tailscale serve to Apache :8080. Watcher + 2-min cron. Kit removed from device after success."
+    },
+    {
+      "timestamp": "2026-06-20T16:00:00-06:00",
+      "installer_version": "3.0.0",
+      "status": "pass",
+      "notes": "v3 install_plan validated against live stack: PHP 8.3 + NC 30.0.5, follow_symlinks only, PPA use_ondrej_if_needed. Mobile sync verified."
+    }
+  ]
+}

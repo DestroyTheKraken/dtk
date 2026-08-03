@@ -1,0 +1,18 @@
+[Unit]
+Description=SMADP Delegation Watcher
+Documentation=file:///home/kraken/SovereignAid/DESIGN.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=kraken
+Group=kraken
+Environment=DELEGATION_BASE=/opt/sovereign/delegation
+Environment=DELEGATION_POLL_SEC=30
+ExecStart=/opt/sovereign/bin/delegation-watcher.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

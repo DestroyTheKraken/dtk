@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tn: {
+              bg: '#24283b',
+              fg: '#c0caf5',
+              dim: '#a9b1d6',
+              card: '#1d202f',
+              border: '#414868',
+              blue: '#7aa2f7',
+              green: '#9ece6a',
+              cyan: '#7dcfff',
+              magenta: '#bb9af7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body class="min-h-screen flex flex-col bg-tn-bg text-tn-fg antialiased">
+  {{ partial "header.html" . }}
+  <main class="flex-grow">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

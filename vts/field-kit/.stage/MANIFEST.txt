@@ -1,0 +1,5 @@
+Valley Tech Field Kit
+Built: 2026-07-09T16:14:37-07:00
+Host: um690
+Nextcloud: /home/kraken/systems_admin/HICKMAN_ROOT/Joshua/Projects/nc-lin-cs
+VyOS: /home/kraken/Documents/valley-tech-support/packages/network-install

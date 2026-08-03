@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMADP Ops Command Center</title>
+  <meta name="description" content="Sovereign Aid — cluster operations dashboard">
+  <meta name="theme-color" content="#1d202f">
+  <link rel="manifest" href="/ops/manifest.webmanifest">
+  <link rel="icon" href="/ops/icon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        tn: { bg: '#24283b', fg: '#c0caf5', dim: '#a9b1d6', card: '#1d202f', border: '#414868', blue: '#7aa2f7', green: '#9ece6a', cyan: '#7dcfff' }
+      }}}
+    };
+  </script>
+  <link rel="stylesheet" href="/ops/main.css">
+</head>
+<body class="min-h-screen bg-tn-bg text-tn-fg antialiased">
+  <header class="tn-hero border-b border-tn-border/50">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <p class="text-tn-cyan text-sm font-medium uppercase tracking-wide mb-2">Sovereign Aid · SMADP</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Ops Command Center</h1>
+      <p class="text-tn-dim max-w-2xl">Browser-first hub for your homelab — Tailscale mesh only. Notus-inspired · Tokyo Night Storm.</p>
+      <p class="text-sm text-tn-dim mt-4">
+        <strong class="text-tn-cyan">Tablet / phone:</strong>
+        <a href="/ops/bookmarks.html" class="text-tn-cyan underline">tap-to-open bookmarks</a>
+        · add this page to your home screen
+      </p>
+      <p class="text-xs text-tn-dim mt-2">Host: um690.taile52ad9.ts.net · <span id="ts"></span></p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-6 text-tn-fg">Platform services</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/" class="tn-card p-6 block">
+          <span class="text-2xl">☁️</span>
+          <h3 class="font-semibold mt-3 text-tn-blue">Nextcloud</h3>
+          <p class="text-sm text-tn-dim mt-1">Files, reports, mobile sync</p>
+          <p class="text-xs text-tn-cyan mt-2">/</p>
+        </a>
+        <a href="/vts/" class="tn-card p-6 block">
+          <span class="text-2xl">🌐</span>
+          <h3 class="font-semibold mt-3 text-tn-cyan">Valley Tech Support</h3>
+          <p class="text-sm text-tn-dim mt-1">Business landing page</p>
+          <p class="text-xs text-tn-cyan mt-2">/vts/</p>
+        </a>
+        <a href="/longhorn/" class="tn-card p-6 block">
+          <span class="text-2xl">💾</span>
+          <h3 class="font-semibold mt-3 text-tn-green">Longhorn</h3>
+          <p class="text-sm text-tn-dim mt-1">Storage & PVC health</p>
+          <p class="text-xs text-tn-cyan mt-2">/longhorn/</p>
+        </a>
+        <a href="/dashboard/" class="tn-card p-6 block">
+          <span class="text-2xl">🔀</span>
+          <h3 class="font-semibold mt-3 text-tn-fg">Traefik</h3>
+          <p class="text-sm text-tn-dim mt-1">Ingress dashboard</p>
+          <p class="text-xs text-tn-cyan mt-2">/dashboard/</p>
+        </a>
+        <a href="/whoami" class="tn-card p-6 block">
+          <span class="text-2xl">🧪</span>
+          <h3 class="font-semibold mt-3 text-tn-dim">whoami</h3>
+          <p class="text-sm text-tn-dim mt-1">Ingress smoke test</p>
+          <p class="text-xs text-tn-cyan mt-2">/whoami</p>
+        </a>
+        <a href="https://login.tailscale.com/admin/machines" target="_blank" rel="noopener" class="tn-card p-6 block">
+          <span class="text-2xl">🔗</span>
+          <h3 class="font-semibold mt-3 text-tn-fg">Tailscale Admin</h3>
+          <p class="text-sm text-tn-dim mt-1">Mesh & DNS settings</p>
+          <p class="text-xs text-tn-cyan mt-2">external ↗</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-4">Cluster nodes</h2>
+      <div class="tn-card overflow-hidden">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-tn-card border-b border-tn-border text-tn-dim">
+            <tr><th class="px-4 py-3">Node</th><th class="px-4 py-3">Role</th><th class="px-4 py-3">LAN</th><th class="px-4 py-3">Tailscale</th></tr>
+          </thead>
+          <tbody class="text-tn-dim divide-y divide-tn-border/50">
+            <tr><td class="px-4 py-3 font-medium text-tn-fg">um690</td><td class="px-4 py-3">Control</td><td class="px-4 py-3">.100</td><td class="px-4 py-3">um690.taile52ad9.ts.net</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-tn-fg">node1</td><td class="px-4 py-3">Worker</td><td class="px-4 py-3">.101</td><td class="px-4 py-3">node1.taile52ad9.ts.net</td></tr>
+            <tr><td class="px-4 py-3 font-medium text-tn-fg">node2</td><td class="px-4 py-3">Worker</td><td class="px-4 py-3">.102</td><td class="px-4 py-3">node2.taile52ad9.ts.net</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Quick verify</h2>
+      <pre class="tn-card p-4 text-xs text-tn-green overflow-x-auto">bash ~/SovereignAid/scripts/phase1/verify-phase1.sh
+bash ~/SovereignAid/scripts/phase5/verify-phase5.sh
+bash ~/SovereignAid/scripts/phase3/verify-phase3-delegation.sh</pre>
+    </section>
+  </main>
+
+  <footer class="border-t border-tn-border/40 mt-16 py-6 text-center text-xs text-tn-dim">
+    SMADP Phase 6 · Install as PWA: Firefox → page menu → Install · <a href="/ops/manifest.webmanifest" class="text-tn-cyan">manifest</a>
+  </footer>
+  <script>
+    document.getElementById('ts').textContent = new Date().toLocaleString();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/ops/sw.js', { scope: '/ops/' }).catch(() => {});
+    }
+  </script>
+</body>
+</html>

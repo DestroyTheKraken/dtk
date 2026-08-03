@@ -1,0 +1,80 @@
+# Smoke-test — path on control-plane MagicDNS host
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: whoami-stripprefix
+  namespace: ingress
+  labels:
+    app.kubernetes.io/part-of: smadp
+spec:
+  stripPrefix:
+    prefixes:
+      - /whoami
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami
+  namespace: ingress
+  labels:
+    app: whoami
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whoami
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      containers:
+        - name: whoami
+          image: traefik/whoami:v1.10.3
+          ports:
+            - containerPort: 80
+              name: http
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              memory: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami
+  namespace: ingress
+  labels:
+    app: whoami
+spec:
+  selector:
+    app: whoami
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami
+  namespace: ingress
+  labels:
+    app: whoami
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: ingress-whoami-stripprefix@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: um690.taile52ad9.ts.net
+      http:
+        paths:
+          - path: /whoami
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  number: 80

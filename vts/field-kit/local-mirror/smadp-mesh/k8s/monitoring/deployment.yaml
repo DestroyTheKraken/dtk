@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health-collector
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: health-collector
+    app.kubernetes.io/component: collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: health-collector
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: health-collector
+        app.kubernetes.io/component: collector
+    spec:
+      serviceAccountName: health-collector
+      nodeSelector:
+        kubernetes.io/hostname: um690
+      containers:
+        - name: collector
+          image: bitnamilegacy/kubectl:1.32.4
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "/scripts/collect.sh"]
+          env:
+            - name: COLLECT_INTERVAL_SECONDS
+              value: "300"
+            - name: MONITOR_NAMESPACES
+              value: "nextcloud,ingress,kube-system,monitoring,longhorn-system"
+          volumeMounts:
+            - name: script
+              mountPath: /scripts
+              readOnly: true
+          resources:
+            requests:
+              cpu: 10m
+              memory: 64Mi
+            limits:
+              memory: 128Mi
+      volumes:
+        - name: script
+          configMap:
+            name: health-collector-script
+            defaultMode: 0755

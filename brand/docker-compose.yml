@@ -1,0 +1,23 @@
+# Static site + Cloudflare Tunnel
+# Usage: copy .env.example to .env, set CLOUDFLARED_TOKEN, then:
+#   docker compose up -d
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: dtk-web
+    volumes:
+      - .:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: dtk-cloudflared
+    # In Cloudflare Zero Trust public hostname, set URL to localhost:80
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARED_TOKEN}
+    depends_on:
+      - web
+    restart: unless-stopped
+    network_mode: service:web

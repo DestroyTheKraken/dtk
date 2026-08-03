@@ -1,0 +1,37 @@
+baseURL = 'https://um690.taile52ad9.ts.net/vts/'
+languageCode = 'en-us'
+title = 'Valley Tech Support'
+theme = []
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = 'Reliable rural IT and network help for homes and small businesses in Omak and Okanogan County, WA.'
+  businessName = 'Sovereign Tech Solutions'
+  location = 'Omak / Okanogan County, Washington'
+  phone = ''
+  email = ''
+  tagline = 'Practical local technology support for rural homes and small businesses.'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Services'
+    url = '/services/'
+    weight = 2
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 3
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

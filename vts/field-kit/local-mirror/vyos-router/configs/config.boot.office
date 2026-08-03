@@ -1,0 +1,124 @@
+/* Valley Tech — OFFICE default (3 ports only)
+ *
+ * Physical map (same hardware naming as home template):
+ *   eth0  = built-in NIC     → WAN
+ *   eth2  = USB-Ethernet     → LAN1  Staff / trusted
+ *   eth3  = USB-Ethernet     → LAN2  Guest + IoT
+ *
+ * eth1 is intentionally unused (not present on this build).
+ *
+ * Apply:
+ *   configure
+ *   load /path/to/config.boot.office
+ *   commit
+ *   save
+ */
+interfaces {
+    ethernet eth0 {
+        address dhcp
+        description "WAN-built-in"
+    }
+    ethernet eth2 {
+        address "192.168.10.1/24"
+        description "LAN1-Staff-Trusted"
+    }
+    ethernet eth3 {
+        address "192.168.50.1/24"
+        description "LAN2-Guest-and-IoT"
+    }
+    loopback lo {
+    }
+}
+nat {
+    source {
+        rule 100 {
+            description "LAN1-Staff-to-WAN"
+            outbound-interface {
+                name eth0
+            }
+            source {
+                address "192.168.10.0/24"
+            }
+            translation {
+                address masquerade
+            }
+        }
+        rule 110 {
+            description "LAN2-GuestIoT-to-WAN"
+            outbound-interface {
+                name eth0
+            }
+            source {
+                address "192.168.50.0/24"
+            }
+            translation {
+                address masquerade
+            }
+        }
+    }
+}
+service {
+    dhcp-server {
+        shared-network-name STAFF {
+            authoritative
+            subnet 192.168.10.0/24 {
+                subnet-id 1
+                default-router "192.168.10.1"
+                name-server "1.1.1.1"
+                name-server "1.0.0.1"
+                lease "86400"
+                range 0 {
+                    start "192.168.10.100"
+                    stop "192.168.10.200"
+                }
+            }
+        }
+        shared-network-name GUESTIOT {
+            authoritative
+            subnet 192.168.50.0/24 {
+                subnet-id 2
+                default-router "192.168.50.1"
+                name-server "1.1.1.1"
+                name-server "1.0.0.1"
+                lease "86400"
+                range 0 {
+                    start "192.168.50.100"
+                    stop "192.168.50.200"
+                }
+            }
+        }
+    }
+    ssh {
+        port "22"
+        listen-address "192.168.10.1"
+    }
+}
+system {
+    host-name "vt-office"
+    name-server "1.1.1.1"
+    name-server "1.0.0.1"
+    time-zone "America/Los_Angeles"
+    config-management {
+        commit-revisions "20"
+    }
+    login {
+        user vyos {
+            authentication {
+                plaintext-password "CHANGE-ME-ON-FIRST-LOGIN"
+            }
+        }
+    }
+    ntp {
+        server "time1.vyos.net" {
+        }
+        server "time2.vyos.net" {
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level "info"
+            }
+        }
+    }
+}

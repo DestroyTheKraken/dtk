@@ -1,0 +1,8 @@
+# Generated secrets — never copy real keys into public git
+runtime/
+*.env
+!*.env.example
+clients.yaml
+inventory.yaml
+dist/*.tar.gz
+.stream-api-key

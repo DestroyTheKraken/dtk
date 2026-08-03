@@ -1,0 +1,50 @@
+# k3s Traefik — MagicDNS + Tailscale TLS (Let's Encrypt via tailscaled)
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  valuesContent: |-
+    certificatesResolvers:
+      tailscale:
+        tailscale: {}
+    deployment:
+      additionalVolumes:
+        - name: tailscale-socket
+          hostPath:
+            path: /var/run/tailscale/tailscaled.sock
+            type: Socket
+    additionalVolumeMounts:
+      - name: tailscale-socket
+        mountPath: /var/run/tailscale/tailscaled.sock
+        readOnly: true
+    nodeSelector:
+      kubernetes.io/hostname: um690
+    providers:
+      kubernetesIngress:
+        enabled: true
+        ingressClass: traefik
+        publishedService:
+          enabled: true
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
+    api:
+      dashboard: true
+    ingressRoute:
+      dashboard:
+        enabled: true
+        matchRule: Host(`um690.taile52ad9.ts.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+        entryPoints:
+          - websecure
+        tls:
+          certResolver: tailscale
+        middlewares: []
+    logs:
+      general:
+        level: INFO
+    additionalArguments:
+      - "--certificatesresolvers.tailscale.tailscale=true"
+      - "--entrypoints.web.forwardedheaders.trustedips=100.64.0.0/10,192.168.20.0/24,192.168.10.0/24"
+      - "--entrypoints.websecure.forwardedheaders.trustedips=100.64.0.0/10,192.168.20.0/24,192.168.10.0/24"

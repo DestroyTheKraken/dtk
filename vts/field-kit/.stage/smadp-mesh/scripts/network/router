@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# router — SSH to VyOS (GrokOS network admin)
+# Usage: router [vyos-command...]
+#        router                    # interactive VyOS shell
+
+set -euo pipefail
+
+HOST="${ROUTER_HOST:-router-home}"
+SSH_OPTS=(-o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new)
+VYOS_OP="/opt/vyatta/bin/vyatta-op-cmd-wrapper"
+
+if [[ $# -eq 0 ]]; then
+    exec ssh "${SSH_OPTS[@]}" "${HOST}"
+fi
+
+exec ssh "${SSH_OPTS[@]}" "${HOST}" "${VYOS_OP}" "$@"

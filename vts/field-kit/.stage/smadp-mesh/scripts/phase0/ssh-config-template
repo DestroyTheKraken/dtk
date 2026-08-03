@@ -1,0 +1,42 @@
+# SMADP Sovereign Mesh SSH config — prefer LAN on 192.168.20.0/24
+# Installed to ~/.ssh/config on each cluster node
+
+Host um690 control
+    HostName 192.168.20.100
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+Host node1
+    HostName 192.168.20.101
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+Host node2
+    HostName 192.168.20.102
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+# Tailscale fallbacks (use: ssh node1-ts) if LAN is down
+Host um690-ts
+    HostName 100.120.232.39
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+Host node1-ts
+    HostName 100.69.243.112
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+Host node2-ts
+    HostName 100.82.68.92
+    User kraken
+    IdentityFile ~/.ssh/id_ed25519
+
+# Shared settings for all mesh hosts
+Host um690 control node1 node2 um690-ts node1-ts node2-ts
+    GSSAPIAuthentication no
+    ConnectTimeout 10
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+    TCPKeepAlive yes
+    IPQoS throughput

@@ -1,0 +1,49 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: health-snapshot
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: health-collector
+    app.kubernetes.io/component: snapshot
+spec:
+  schedule: "0 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: health-collector
+            app.kubernetes.io/component: snapshot
+        spec:
+          serviceAccountName: health-collector
+          restartPolicy: Never
+          nodeSelector:
+            kubernetes.io/hostname: um690
+          containers:
+            - name: snapshot
+              image: bitnamilegacy/kubectl:1.32.4
+              imagePullPolicy: IfNotPresent
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  set -eu
+                  echo "=== hourly snapshot $(date -Iseconds) ==="
+                  kubectl get nodes -o wide
+                  echo ""
+                  echo "=== problem pods ==="
+                  kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded || true
+                  echo ""
+                  echo "=== ingress ==="
+                  kubectl get ingress -A
+              resources:
+                requests:
+                  cpu: 10m
+                  memory: 64Mi
+                limits:
+                  memory: 128Mi

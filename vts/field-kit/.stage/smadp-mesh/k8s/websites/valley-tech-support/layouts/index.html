@@ -1,0 +1,79 @@
+{{ define "main" }}
+<section class="tn-gradient-hero border-b border-tn-border/40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="text-tn-cyan font-medium mb-3 tracking-wide uppercase text-sm">Omak · Okanogan County</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-tn-fg leading-tight mb-6">
+        Reliable rural IT and network help for homes and small businesses
+      </h1>
+      <p class="text-lg text-tn-dim mb-8 leading-relaxed">
+        {{ .Site.Params.tagline }} Starlink optimization, smart home setup, and everyday computer support — local expertise without the big-company runaround.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="{{ "/contact/" | relURL }}" class="tn-btn-primary px-6 py-3 rounded-lg">Request Help</a>
+        <a href="{{ "/services/" | relURL }}" class="tn-btn-outline px-6 py-3 rounded-lg">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-tn-fg mb-3">What I Offer</h2>
+    <p class="text-tn-dim max-w-2xl mx-auto">Practical, local technology support for homes, short-term rentals, and small businesses in rural Washington.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="tn-card p-8 hover:border-tn-blue/50 transition">
+      <div class="h-12 w-12 rounded-lg bg-tn-blue/15 flex items-center justify-center mb-4">
+        <span class="text-2xl tn-accent-blue">💻</span>
+      </div>
+      <h3 class="text-xl font-semibold text-tn-fg mb-3">General IT Support</h3>
+      <p class="text-tn-dim mb-4">Friendly local help with computers, devices, and everyday tech problems — slow PCs, software installs, printers, and remote or on-site support.</p>
+      <ul class="text-sm text-tn-dim space-y-2">
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Troubleshooting & optimization</li>
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Device setup & upgrades</li>
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Clear explanations in plain language</li>
+      </ul>
+      <p class="mt-4 text-sm text-tn-cyan font-medium">From $75/hr · flat-rate jobs $150–250</p>
+    </div>
+    <div class="tn-card p-8 hover:border-tn-cyan/50 transition">
+      <div class="h-12 w-12 rounded-lg bg-tn-cyan/15 flex items-center justify-center mb-4">
+        <span class="text-2xl tn-accent-cyan">📡</span>
+      </div>
+      <h3 class="text-xl font-semibold text-tn-fg mb-3">Network & Smart Home</h3>
+      <p class="text-tn-dim mb-4">Starlink and mesh WiFi optimization, smart home device setup, and media centers that work reliably together on your network.</p>
+      <ul class="text-sm text-tn-dim space-y-2">
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Starlink + mesh WiFi (Deco, etc.)</li>
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Alexa, Google, Samsung SmartThings</li>
+        <li class="flex gap-2"><span class="tn-accent-green">✓</span> Guest networks & basic security</li>
+      </ul>
+      <p class="mt-4 text-sm text-tn-cyan font-medium">Flat jobs $200–400 · hourly $75/hr</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-tn-card/50 border-y border-tn-border/40 py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div>
+        <p class="text-3xl font-bold tn-accent-blue mb-2">Local</p>
+        <p class="text-sm text-tn-dim">Based in Omak — I understand rural connectivity challenges firsthand.</p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold tn-accent-green mb-2">Practical</p>
+        <p class="text-sm text-tn-dim">Clear scope, straightforward solutions, no unnecessary complexity.</p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold tn-accent-magenta mb-2">Trusted</p>
+        <p class="text-sm text-tn-dim">Veteran-owned experience with T1 support and homelab networking skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ with .Content }}
+<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 prose-tn">
+  {{ . }}
+</section>
+{{ end }}
+{{ end }}

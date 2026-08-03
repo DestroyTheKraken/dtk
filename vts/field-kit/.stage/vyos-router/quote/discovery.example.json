@@ -1,0 +1,21 @@
+{
+  "site_name": "example-home",
+  "date": "2026-07-09",
+  "wan": { "type": "starlink", "notes": "" },
+  "existing_gear": {
+    "modem_router_combo": true,
+    "mesh_brand": "deco",
+    "ap_count": 2,
+    "managed_switch": false
+  },
+  "scope_flags": {
+    "base_router_appliance": true,
+    "onsite_install": true,
+    "guest_wifi": true,
+    "iot_isolation": true,
+    "monitoring_addon": false,
+    "static_ip_count": 0
+  },
+  "labor_hours_estimate": 2,
+  "notes": "Replace ISP gateway with VyOS appliance; keep mesh as APs if bridge mode."
+}

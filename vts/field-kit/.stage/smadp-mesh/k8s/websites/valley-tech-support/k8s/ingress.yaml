@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: valley-tech-support
+  namespace: websites
+  labels:
+    app.kubernetes.io/name: valley-tech-support
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: websites-valley-tech-stripprefix@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: um690.taile52ad9.ts.net
+      http:
+        paths:
+          - path: /vts
+            pathType: Prefix
+            backend:
+              service:
+                name: valley-tech-support
+                port:
+                  number: 80

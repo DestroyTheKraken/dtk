@@ -1,0 +1,34 @@
+# Per-job site inventory — copy to inventory.yaml (do not commit secrets)
+site_id: client-example
+date: 2026-07-08
+contact_name: ""
+address: ""
+phone: ""
+email: ""
+
+wan:
+  type: starlink   # starlink | cable | dsl | other
+  notes: ""
+
+lan:
+  gateway: ""
+  primary_ssid: ""
+  guest_ssid: ""
+  iot_ssid: ""
+  router_model: ""   # deco | vyos-custom | other
+
+job:
+  sku: base          # base | base+monitoring | base+monitoring+appliance
+  remote_access: false
+  agreement_signed: false
+
+monitoring:          # only if sku includes monitoring
+  enabled: false
+  host_type: none    # none | client-pc | custom-vyos-appliance
+  hostname: ""
+  tailscale_name: ""
+  netdata_child: false
+
+notes: |
+  Pain points:
+  Work performed:

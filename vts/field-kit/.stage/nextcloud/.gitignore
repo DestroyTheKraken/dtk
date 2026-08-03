@@ -1,0 +1,25 @@
+# Runtime install artifacts (may contain host details or secrets)
+phase-docs/
+
+# Credential store (passwords, DB pass — never commit)
+.install-credentials
+
+# Local env overrides
+.env
+.env.*
+
+# Keys and tokens
+*.pem
+*.key
+*.p12
+id_rsa*
+*.pat
+
+# Release artifacts
+dist/*.tar.gz
+dist/*.sha256
+
+# Logs
+*.log
+
+.DS_Store

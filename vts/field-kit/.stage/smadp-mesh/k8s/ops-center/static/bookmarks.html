@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMADP Bookmarks</title>
+  <meta name="theme-color" content="#1d202f">
+  <link rel="stylesheet" href="/ops/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      tn: { bg: '#24283b', fg: '#c0caf5', dim: '#a9b1d6', card: '#1d202f', border: '#414868', blue: '#7aa2f7', cyan: '#7dcfff' }
+    }}}};
+  </script>
+</head>
+<body class="min-h-screen bg-tn-bg text-tn-fg p-4 pb-12">
+  <div class="max-w-lg mx-auto">
+    <a href="/ops/" class="text-tn-cyan text-sm">← Ops Center</a>
+    <h1 class="text-2xl font-bold mt-4 mb-2">SMADP Bookmarks</h1>
+    <p class="text-sm text-tn-dim mb-6">Tap a service below. On tablet/phone: use <strong>Add to Home screen</strong> on the Ops Center page — no file import needed.</p>
+
+    <div class="space-y-3">
+      <a href="/ops/" class="tn-card block p-4 text-lg font-medium text-tn-blue">Ops Command Center</a>
+      <a href="/" class="tn-card block p-4 text-lg font-medium">Nextcloud</a>
+      <a href="/vts/" class="tn-card block p-4 text-lg font-medium text-tn-cyan">Valley Tech Support</a>
+      <a href="/longhorn/" class="tn-card block p-4 text-lg font-medium text-tn-green">Longhorn Storage</a>
+      <a href="/dashboard/" class="tn-card block p-4 text-lg font-medium">Traefik Dashboard</a>
+      <a href="https://login.tailscale.com/admin/machines" class="tn-card block p-4 text-lg font-medium" target="_blank" rel="noopener">Tailscale Admin ↗</a>
+    </div>
+
+    <p class="text-xs text-tn-dim mt-8">
+      Desktop Firefox: <a href="/ops/smadp-bookmarks.html" class="text-tn-cyan underline">download bookmark file</a> for HTML import.
+    </p>
+  </div>
+</body>
+</html>

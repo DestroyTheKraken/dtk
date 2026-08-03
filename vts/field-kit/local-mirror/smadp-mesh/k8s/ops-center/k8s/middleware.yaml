@@ -1,0 +1,12 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: ops-center-stripprefix
+  namespace: ops-center
+  labels:
+    app.kubernetes.io/name: ops-center
+    app.kubernetes.io/part-of: smadp
+spec:
+  stripPrefix:
+    prefixes:
+      - /ops

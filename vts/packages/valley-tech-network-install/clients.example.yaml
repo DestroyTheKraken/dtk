@@ -1,0 +1,18 @@
+# YOUR private registry of monitored sites (4–6 max).
+# Copy to clients.yaml outside git or keep local-only.
+# Never commit real tokens or client PII to a public repo.
+
+parent:
+  host: um690
+  netdata_url_hint: "http://um690.<tailnet>.ts.net:19999"  # Tailscale only
+  alerts: telegram
+
+clients: []
+# Example entry after enroll:
+# - site_id: smith-farm
+#   hostname: smith-gw
+#   tailscale_name: smith-gw
+#   host_type: custom-vyos-appliance
+#   enrolled: 2026-07-08
+#   monthly_usd: 100
+#   notes: Starlink + guest WiFi

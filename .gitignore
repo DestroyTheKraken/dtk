@@ -1,0 +1,19 @@
+# Local-only contact / full PII copies — never publish or pack
+brand/private/
+**/*PRIVATE*
+**/*.FULL.md
+site/dist/
+
+# deps / bulk
+**/node_modules/
+**/.git/
+*.iso
+*.deb
+*.img
+*.img.xz
+**/.env
+**/*secret*
+**/*credential*
+
+# do not nest external symlinks
+vts-external/

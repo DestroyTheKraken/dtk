@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: health-collector-script
+  namespace: monitoring
+data:
+  collect.sh: |
+    #!/bin/sh
+    set -eu
+
+    INTERVAL="${COLLECT_INTERVAL_SECONDS:-300}"
+    NS_FILTER="${MONITOR_NAMESPACES:-nextcloud,ingress,kube-system,monitoring,longhorn-system}"
+
+    log() { echo "[health-collector $(date -Iseconds)] $*"; }
+
+    collect_once() {
+      log "=== cluster snapshot ==="
+      kubectl get nodes -o wide 2>/dev/null || true
+      echo ""
+      log "=== non-running pods (all namespaces) ==="
+      kubectl get pods -A --field-selector=status.phase!=Running,status.phase!=Succeeded 2>/dev/null \
+        | grep -v '^$' || echo "(none)"
+      echo ""
+      log "=== watched namespaces: ${NS_FILTER} ==="
+      for ns in $(echo "${NS_FILTER}" | tr ',' ' '); do
+        echo "--- ${ns} ---"
+        kubectl get pods -n "${ns}" -o wide 2>/dev/null || echo "(namespace missing)"
+        echo ""
+      done
+      log "=== ingress ==="
+      kubectl get ingress -A 2>/dev/null || true
+      echo ""
+      log "=== PVCs (non-Bound) ==="
+      kubectl get pvc -A 2>/dev/null | awk 'NR==1 || $6!="Bound"' || true
+      echo ""
+    }
+
+    log "Starting collector (interval=${INTERVAL}s)"
+    while true; do
+      collect_once
+      sleep "${INTERVAL}"
+    done

@@ -1,0 +1,42 @@
+# Secrets & local env
+.env
+.env.*
+!.env.example
+**/*secret*
+**/*credentials*
+**/*.pem
+**/*nextcloud.env*
+
+# Large media / installers (keep out of git; live on NAS / field USB)
+**/*.iso
+**/*.img
+**/*.qcow2
+**/*.tar
+**/*.tar.gz
+**/*.zip
+**/*.ova
+
+# Field-kit local mirrors / stage noise (adjust if you need tracked copies)
+field-kit/.stage/**/downloads/
+field-kit/local-mirror/**/*.iso
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.idea/
+.vscode/
+*.log
+
+# Language toolchains
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+dist/
+build/
+
+# Vendor / large field tooling (store on USB/NAS, not git)
+services/ventoy*/
+**/ventoy-*/

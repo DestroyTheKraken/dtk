@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ops-center
+  namespace: ops-center
+  labels:
+    app.kubernetes.io/name: ops-center
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: ops-center-ops-center-stripprefix@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: um690.taile52ad9.ts.net
+      http:
+        paths:
+          - path: /ops
+            pathType: Prefix
+            backend:
+              service:
+                name: ops-center
+                port:
+                  number: 80

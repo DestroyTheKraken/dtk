@@ -1,0 +1,13 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "version": "1.0",
+  "created": "2026-07-08T12:00:00-07:00",
+  "source": "um690",
+  "target": "node1",
+  "title": "Example delegated task",
+  "command": "hostname | tee /tmp/smadp-delegation-test.txt",
+  "verify": "test -f /tmp/smadp-delegation-test.txt && grep -q node1 /tmp/smadp-delegation-test.txt",
+  "timeout_sec": 300,
+  "retries": 2,
+  "notify": "nextcloud://reports/delegation/"
+}
