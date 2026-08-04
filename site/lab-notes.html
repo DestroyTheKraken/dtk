@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="Joshua Hickman · Rural IT" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="theme.css?v=20260803warm" />
+  <link rel="stylesheet" href="theme.css?v=20260803p1" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,11 +30,12 @@
           <span class="brand-tag">Rural IT · DTK</span>
         </span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="/#help">Services</a>
+            <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
         <a href="lab-notes.html" aria-current="page">Lab</a>
         <a href="about.html">About</a>
-        <a href="/#contact">Contact</a>
+        <a class="nav-cta" href="/#contact" data-open-contact>Contact</a>
       </nav>
     </div>
   </header>
@@ -79,15 +80,34 @@
       · Studio name Destroy the Kraken = problem metaphor, not a crypto service
     </p>
   </main>
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="wrap">
       <p class="links">
         <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="lab-notes.html">Lab</a>
         <a href="about.html">About</a>
+        <a href="resources.html">Links</a>
         <a href="mailto:destroythekraken@gmail.com">Email</a>
+        <a href="/#contact" data-open-contact>Message</a>
       </p>
-      <p class="tiny">© Joshua Hickman · Rural IT portfolio lab</p>
+      <p>© Joshua Hickman · Rural IT (studio: Destroy the Kraken)</p>
+      <p class="tiny">
+        Rural IT for Okanogan County · Private networks and hardware you own · Practiced first, plain language
+        · Unaffiliated with any other “Kraken” brand
+      </p>
     </div>
   </footer>
+
+  <!-- contact uses homepage modal pattern; link to home contact if no modal -->
+  <script>
+    document.querySelectorAll("[data-open-contact]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        if (!document.getElementById("contact-modal")) {
+          window.location.href = "/#contact";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
