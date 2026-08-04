@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" fill="#0f1419"/>
+  <text x="450" y="40" text-anchor="middle" fill="#e7ecf1" font-family="Ubuntu, sans-serif" font-size="18" font-weight="600">Account roles — least privilege on a family desktop</text>
+
+  <rect x="30" y="80" width="190" height="200" rx="10" fill="#1a2332" stroke="#3d7ea6" stroke-width="2"/>
+  <text x="125" y="115" text-anchor="middle" fill="#7ec8e3" font-family="Ubuntu, sans-serif" font-size="14" font-weight="600">SA (remote)</text>
+  <text x="125" y="145" text-anchor="middle" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="13">remote SA</text>
+  <text x="45" y="180" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Hidden greeter</text>
+  <text x="45" y="200" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Full sudo</text>
+  <text x="45" y="220" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Field kit + Grok</text>
+  <text x="45" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Ongoing remote ops</text>
+
+  <rect x="245" y="80" width="190" height="200" rx="10" fill="#1a2332" stroke="#5a9f6a" stroke-width="2"/>
+  <text x="340" y="115" text-anchor="middle" fill="#8fd19e" font-family="Ubuntu, sans-serif" font-size="14" font-weight="600">Family admin</text>
+  <text x="340" y="145" text-anchor="middle" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="13">parent admin</text>
+  <text x="260" y="180" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Visible login</text>
+  <text x="260" y="200" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Full sudo</text>
+  <text x="260" y="220" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Parent day-to-day</text>
+  <text x="260" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">No kid lockdown</text>
+
+  <rect x="460" y="80" width="190" height="200" rx="10" fill="#1a2332" stroke="#c4a35a" stroke-width="2"/>
+  <text x="555" y="115" text-anchor="middle" fill="#e6c87a" font-family="Ubuntu, sans-serif" font-size="14" font-weight="600">Standard</text>
+  <text x="555" y="145" text-anchor="middle" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="13">teen coder</text>
+  <text x="475" y="180" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Terminal + coding</text>
+  <text x="475" y="200" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">No sudo</text>
+  <text x="475" y="220" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Disk quota</text>
+  <text x="475" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Firefox profile</text>
+
+  <rect x="675" y="80" width="190" height="200" rx="10" fill="#1a2332" stroke="#a67c7c" stroke-width="2"/>
+  <text x="770" y="115" text-anchor="middle" fill="#e0a0a0" font-family="Ubuntu, sans-serif" font-size="14" font-weight="600">Kid</text>
+  <text x="770" y="145" text-anchor="middle" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="13">kid · kid</text>
+  <text x="690" y="180" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">No terminal / CLI</text>
+  <text x="690" y="200" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">No system tools</text>
+  <text x="690" y="220" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Learning + games</text>
+  <text x="690" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="12">Disk quota</text>
+
+  <text x="450" y="330" text-anchor="middle" fill="#5a6570" font-family="Ubuntu, sans-serif" font-size="12">Least privilege · family desktop · Destroy the Kraken field kit</text>
+</svg>

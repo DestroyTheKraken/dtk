@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420">
+  <rect width="960" height="420" fill="#0f1419"/>
+  <text x="480" y="36" text-anchor="middle" fill="#e7ecf1" font-family="Ubuntu, Segoe UI, sans-serif" font-size="20" font-weight="600">Remote family desktop — Destroy the Kraken</text>
+  <text x="480" y="58" text-anchor="middle" fill="#8b9aab" font-family="Ubuntu, Segoe UI, sans-serif" font-size="13">Omak, WA (SA) → Tailscale mesh → Austin, TX household PC</text>
+
+  <rect x="48" y="100" width="320" height="220" rx="12" fill="#1a2332" stroke="#3d7ea6" stroke-width="2"/>
+  <text x="208" y="132" text-anchor="middle" fill="#7ec8e3" font-family="Ubuntu, sans-serif" font-size="15" font-weight="600">Omak, WA — Control plane</text>
+  <text x="68" y="168" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="14">Operator workstation</text>
+  <text x="68" y="192" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Lab mesh practice (AIDE_OS patterns)</text>
+  <text x="68" y="216" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Grok Build — directed by SA</text>
+  <text x="68" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Playbooks · Field Kit · verify</text>
+  <text x="68" y="280" fill="#e7ecf1" font-family="Ubuntu, sans-serif" font-size="13">Joshua Hickman — System Administrator</text>
+
+  <line x1="380" y1="210" x2="560" y2="210" stroke="#5a9f6a" stroke-width="3"/>
+  <polygon points="560,210 542,200 542,220" fill="#5a9f6a"/>
+  <text x="470" y="195" text-anchor="middle" fill="#8fd19e" font-family="Ubuntu, sans-serif" font-size="12">Tailscale</text>
+  <text x="470" y="232" text-anchor="middle" fill="#6a7a8a" font-family="Ubuntu, sans-serif" font-size="11">encrypted mesh</text>
+
+  <rect x="580" y="100" width="340" height="220" rx="12" fill="#1a2332" stroke="#c4a35a" stroke-width="2"/>
+  <text x="750" y="132" text-anchor="middle" fill="#e6c87a" font-family="Ubuntu, sans-serif" font-size="15" font-weight="600">Austin, TX — Customer desktop</text>
+  <text x="600" y="168" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="14">Ubuntu Cinnamon family PC</text>
+  <text x="600" y="192" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Hidden remote SA account</text>
+  <text x="600" y="216" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Family admin (parent)</text>
+  <text x="600" y="240" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Teen / coding account</text>
+  <text x="600" y="264" fill="#8b9aab" font-family="Ubuntu, sans-serif" font-size="13">Kid accounts (locked down)</text>
+  <text x="600" y="296" fill="#c5d0db" font-family="Ubuntu, sans-serif" font-size="13">Always-on · quotas · browser policy</text>
+</svg>

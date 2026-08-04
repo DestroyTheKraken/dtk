@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study: Remote Family Desktop | Joshua Hickman</title>
+  <meta name="description" content="How Joshua Hickman provisioned a multi-user Ubuntu Cinnamon family desktop in Austin, Texas from Omak, Washington over Tailscale — with Grok Build directed by the system administrator." />
+  <meta name="author" content="Joshua Hickman" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.destroythekraken.com/case-study-remote-family-desktop.html" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.destroythekraken.com/case-study-remote-family-desktop.html" />
+  <meta property="og:title" content="Case Study: Remote Family Desktop | Joshua Hickman" />
+  <meta property="og:description" content="Ubuntu Cinnamon multi-user family PC, provisioned fully remote over mesh. Practiced process, clear handoff." />
+  <meta property="og:image" content="https://www.destroythekraken.com/img/og-default.png" />
+  <meta property="og:site_name" content="Joshua Hickman · Rural IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css?v=20260803methow" />
+  <style>
+    .case-figure { margin: 1.5rem 0; max-width: 100%; overflow-x: auto; }
+    .case-figure img, .case-figure object, .case-figure svg { max-width: 100%; height: auto; display: block; border-radius: 0.75rem; }
+    .case-figure figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="/" title="Joshua Hickman — rural IT for Okanogan County">
+        <img src="img/logo.png" alt="Joshua Hickman rural IT logo" width="32" height="32" />
+        <span class="brand-text">
+          <span class="brand-name">Joshua Hickman</span>
+          <span class="brand-tag">Rural IT · DTK</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="lab-notes.html">Lab</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="/#contact" data-open-contact>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap prose">
+    <p class="eyebrow">Field notes · August 2026</p>
+    <h1>Remote family desktop provisioning</h1>
+    <p class="lead">
+      Omak, Washington → Austin, Texas over Tailscale. A full Ubuntu Cinnamon household PC, set up like a real field job — not a weekend experiment.
+    </p>
+
+    <h2>How I work (and how I use Grok)</h2>
+    <p>
+      I don’t sell theater. I sell systems that stay up and stay understandable.
+    </p>
+    <p>
+      This engagement was personal (family), but I ran it like any client job: scope, access path, baseline, change control, handoff.
+      I used the stack I already trust for real work — encrypted mesh access, my control-plane workstation, and <strong>Grok Build as an on-box research and scripting partner under my direction</strong>.
+    </p>
+    <p>
+      <strong>I’m still the system administrator.</strong> Grok doesn’t own the keyboard; I do.
+      It speeds research, scripting, and verification. I decide what runs on a living family PC.
+    </p>
+
+    <h2>What I delivered</h2>
+    <p>
+      A freshly installed <strong>Ubuntu Cinnamon</strong> home desktop in <strong>Austin, Texas</strong>, provisioned fully remote from <strong>Omak, Washington</strong>.
+      It became a durable multi-user family machine: always-on behavior, educational and lightweight game software, age-appropriate accounts, disk quotas, careful browser defaults, and a hidden remote support path for ongoing help.
+    </p>
+    <ul class="clean">
+      <li>Family admin for day-to-day parent use</li>
+      <li>Teen / coding account with terminal tools and Python-friendly apps</li>
+      <li>Kid accounts with lockdown and quotas (fewer footguns)</li>
+      <li>Remote SA account for support — not on the greeter for casual login</li>
+      <li>Clean handoff: family desktops free of setup residue; field kit kept for the SA only</li>
+    </ul>
+
+    <h2>How I got there</h2>
+    <p>
+      Secure mesh path from my Omak control plane into the Austin household host.
+      On the box I worked as a dedicated remote SA account, with Grok co-located for research and scripts — every privileged step approved and run by me.
+    </p>
+
+    <figure class="case-figure">
+      <img src="assets/case-study/remote-ops-path.svg" alt="Diagram: Washington control plane to Austin family desktop over Tailscale" width="960" height="420" />
+      <figcaption>Remote path: operator control plane → encrypted mesh → customer desktop.</figcaption>
+    </figure>
+
+    <figure class="case-figure">
+      <img src="assets/case-study/role-model-simple.svg" alt="Diagram of account roles: remote SA, family admin, standard, kid" width="900" height="360" />
+      <figcaption>Least privilege: different roles for remote support, parents, teen coder, and kids.</figcaption>
+    </figure>
+
+    <h2>Why this matters</h2>
+    <p>
+      This is the boring, valuable work junior sysadmin and T1–T2 roles should be able to show:
+    </p>
+    <ul class="clean">
+      <li><strong>Remote access design</strong> — who is admin, who is not, mesh identity without open-WAN surprises</li>
+      <li><strong>Linux multi-user desktops</strong> — accounts, quotas, group-based lockdown</li>
+      <li><strong>Change with evidence</strong> — scripts, verify steps, honest limits</li>
+      <li><strong>AI-assisted ops without abdication</strong> — Grok drafts; I direct and own the blast radius</li>
+      <li><strong>Handoff</strong> — customer-facing cleanliness vs internal field kit for the next site</li>
+    </ul>
+
+    <h2>Honest limits</h2>
+    <ul class="clean">
+      <li>Some browser bookmark automation had to finish on first GUI login (snap/headless limits)</li>
+      <li>Kid lockdown reduces menu and terminal footguns; it is not a full sandbox VM</li>
+      <li>This household is family; process was still run as a full client-style engagement for training and field-kit reuse</li>
+    </ul>
+
+
+    <h2>Validation</h2>
+    <p>
+      Remote review from the control plane (SSH as remote SA) plus on-box checks confirmed quotas in force for the kids and coding account,
+      <code>SystemAccount=true</code> for the hidden SA (not on the greeter face list), Cinnamon desktop, Tailscale mesh, and a clean family handoff.
+    </p>
+
+    <h2>Customer testimony</h2>
+    <p class="muted">
+      A short form has been offered to the household contact. Public quote will appear here only with their OK
+      (first name + region is fine).
+    </p>
+    <blockquote class="muted" style="border-left:3px solid var(--border);padding-left:1rem;margin:1rem 0">
+      <em>Testimony pending.</em>
+    </blockquote>
+
+
+    <h2>Service lines this maps to</h2>
+    <ul class="clean">
+      <li>PC repairs &amp; upgrades</li>
+      <li>Ubuntu Cinnamon family desktop</li>
+      <li>Home computing consultation</li>
+      <li>Sovereign home cloud (path for files/media on gear they own)</li>
+      <li>Consulting and tech support (ongoing remote assist for the family admin)</li>
+    </ul>
+    <p>
+      I work <strong>local-first</strong> in Okanogan County. Custom field kits plus on-site or remote troubleshooting
+      mean I can still deliver disciplined support across distance when the mesh path is solid — and bring that same kit to neighbors at home.
+    </p>
+
+    <h2>Related services</h2>
+    <ul class="clean">
+      <li><a href="services.html#core">PC setup &amp; network triage</a></li>
+      <li><a href="services.html#core">Files &amp; backups / private starter setups</a></li>
+      <li><a href="lab-notes.html">AIDE_OS lab</a> — where I practice patterns first</li>
+    </ul>
+
+    <div class="btn-row" style="margin-top:1.5rem">
+      <button type="button" class="btn btn-primary" data-open-contact>Message for a callback</button>
+      <a class="btn btn-ghost" href="tel:+15095577298">509.557.7298</a>
+      <a class="btn btn-ghost" href="mailto:destroythekraken@gmail.com">Email</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="links">
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="lab-notes.html">Lab</a>
+        <a href="about.html">About</a>
+        <a href="mailto:destroythekraken@gmail.com">Email</a>
+        <a href="/#contact" data-open-contact>Message</a>
+      </p>
+      <p class="tiny">© Joshua Hickman · Destroy the Kraken · Field notes for portfolio; client details minimized</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-open-contact]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        window.location.href = "/#contact";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -89,3 +89,7 @@ If I ask you to trust a process, I want to have practiced it myself first.
 | [HickMedia](https://github.com/DestroyTheKraken/HickMedia) | Media hub console lab |
 
 Design brief for site optimization: operator `DESIGN.md` (Phase 1 foundation shipped: dual-market home, services page, nav, lab proof, contact).
+
+## Field notes
+
+- [Remote family desktop (Omak → Austin)](https://www.destroythekraken.com/case-study-remote-family-desktop.html) — Ubuntu Cinnamon multi-user job over Tailscale
