@@ -13,9 +13,10 @@
   <meta property="og:url" content="https://www.destroythekraken.com/about.html" />
   <meta property="og:title" content="About Joshua Hickman | Rural IT · Okanogan County" />
   <meta property="og:description" content="Army veteran and practical local IT for Okanogan County. Appointment-only help — systems you own." />
-  <meta property="og:image" content="https://www.destroythekraken.com/img/og-default.png" />
+  <meta property="og:image" content="https://www.destroythekraken.com/img/joshua-hickman-profile.jpg" />
   <meta property="og:site_name" content="Joshua Hickman · Rural IT" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.destroythekraken.com/img/joshua-hickman-profile.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="theme.css?v=20260803p1" />
   <script type="application/ld+json">
@@ -32,6 +33,7 @@
       "email": "destroythekraken@gmail.com",
       "telephone": "+1-509-557-7298",
       "url": "https://www.destroythekraken.com/about.html",
+      "image": "https://www.destroythekraken.com/img/joshua-hickman-profile.jpg",
       "homeLocation": { "@type": "Place", "name": "Okanogan County, Washington" }
     }
   }
@@ -48,7 +50,7 @@
           <span class="brand-tag">Rural IT · DTK</span>
         </span>
       </a>
-            <nav class="nav" aria-label="Primary">
+      <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="services.html">Services</a>
         <a href="lab-notes.html">Lab</a>
@@ -60,8 +62,18 @@
   <main id="main" class="wrap prose">
     <p class="eyebrow">About</p>
     <h1>Joshua Hickman</h1>
+    <p class="profile-photo" style="margin:0 0 1.5rem">
+      <img
+        src="img/joshua-hickman-profile.jpg"
+        alt="Joshua Hickman, rural IT specialist in Okanogan County"
+        width="280"
+        height="280"
+        style="border-radius:1rem;max-width:min(280px,100%);height:auto;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.35)"
+      />
+    </p>
     <p class="lead">
-      I’m based in <strong>Omak, Okanogan County</strong>. I help people across Okanogan County — practical work in the Okanogan Valley, and carefully scoped premium packages for Methow properties when that fits.
+      I’m based in <strong>Omak, Okanogan County</strong>. I help households and small shops with
+      PCs, Wi‑Fi, and systems they own — including full desktop rebuilds when Windows isn’t the best fit.
     </p>
 
     <h2>A little of my path</h2>
@@ -72,6 +84,17 @@
     <p>
       What it left me with is useful: calm under pressure, clear talking, and a habit of finishing the job so you can move on with your day.
       I’m building Linux and systems skills on purpose, and I practice on my own lab before I ever touch yours.
+    </p>
+
+    <h2>Recent work (example)</h2>
+    <p>
+      I recently helped a family move from a struggling Windows desktop to <strong>Ubuntu Cinnamon</strong>.
+      We sorted bad hardware and messy setup, chose a desktop that still feels familiar after Windows, and set up separate accounts for adults and kids — including a young coder who wants to learn Python.
+    </p>
+    <p>
+      They also want a smaller cloud footprint later (files, media, and games on gear they own).
+      The household admin stays in charge; I help remotely when something’s beyond a quick fix.
+      Jobs like this are planned and documented with the same care I use in my own lab.
     </p>
 
     <h2>How we’ll work together</h2>
@@ -104,7 +127,7 @@
       · Omak / Okanogan County, WA
     </p>
   </main>
-    <footer class="site-footer">
+  <footer class="site-footer">
     <div class="wrap">
       <p class="links">
         <a href="/">Home</a>
@@ -122,11 +145,9 @@
       </p>
     </div>
   </footer>
-
-  <!-- contact uses homepage modal pattern; link to home contact if no modal -->
   <script>
     document.querySelectorAll("[data-open-contact]").forEach(function (el) {
-      el.addEventListener("click", function (e) {
+      el.addEventListener("click", function () {
         if (!document.getElementById("contact-modal")) {
           window.location.href = "/#contact";
         }
