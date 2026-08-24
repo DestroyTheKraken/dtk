@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|--------|
-| **Public site** | https://www.destroythekraken.com |
+| **Public site** | Retired — use [DestroyTheKraken/homelab](https://github.com/DestroyTheKraken/homelab) |
 | **Working tree** | `~/DTK` (this directory) |
 | **NAS archive (full history)** | `/mnt/systems_admin/joshua/HICKMAN_ROOT/Joshua/Projects/DTK` |
 
