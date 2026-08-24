@@ -46,7 +46,7 @@ Use the exact marketing language, package descriptions, pricing, and brand story
 
 **3. About Section — Why Destroy the Kraken**
 - Client-facing explanation of the name (from Content_Master “Brand” section)
-- Condensed “Who I Am” bio; link to destroythekraken.com for portfolio
+- Condensed “Who I Am” bio; link to GitHub for portfolio
 
 **4. The Local Challenge Section**
 - Use the exact content from the Single Source of Truth document

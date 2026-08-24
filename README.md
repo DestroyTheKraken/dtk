@@ -6,8 +6,6 @@ I considered running a home IT support business. I would rather work **on a team
 
 **Current portfolio:** [homelab](https://github.com/DestroyTheKraken/homelab) · [aide-os](https://github.com/DestroyTheKraken/aide-os)
 
-The public website `destroythekraken.com` is retired.
-
 ## What you will find
 
 | Path | What it was for |

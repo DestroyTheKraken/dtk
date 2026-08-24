@@ -23,7 +23,7 @@ I am not claiming memorized full-stack web development. I am claiming **repeatab
 |------|----------|
 | **Linux fundamentals** | LFCS study program, hands-on cluster ops, SSH, Docker Compose, networking |
 | **Four-node production cluster** | um690 control plane + node1 (apps) + node2 (edge) + node3 (data) — live on Tailscale |
-| **Deployed websites** | destroythekraken.com (portfolio), client landing page, verified health checks |
+| **Public portfolio** | GitHub org [DestroyTheKraken](https://github.com/DestroyTheKraken) |
 | **Runbooks & automation** | `biz-cluster-deploy.sh`, DTK guides, deployment verification |
 | **Business launch** | Destroy The Kraken scoped to services I can document and reproduce |
 
@@ -87,5 +87,4 @@ Hardware is client-provided or purchased separately with guided specs. Labor inc
 
 - [[DTK_About]] — full biography and career direction
 - [[Content_Master]] — client pricing SSOT
-- [destroythekraken.com/projects/destroythekraken-website/](https://destroythekraken.com/projects/destroythekraken-website/) — public walkthrough
 - [github.com/DestroyTheKraken](https://github.com/DestroyTheKraken) — repos and runbooks

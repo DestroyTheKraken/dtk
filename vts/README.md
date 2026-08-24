@@ -1,13 +1,11 @@
 # Valley Tech Support — Ops home
 
-**Brand umbrella:** [DestroyTheKraken (DTK)](https://www.destroythekraken.com) — professional site + portfolio.  
 **This tree:** service ops, field kit, packages, clients. Also linked as **`~/DTK/vts`**.
 
 | Field | Value |
 |-------|--------|
 | **Working root (canon)** | `~/valley-tech-support` → `~/Documents/valley-tech-support` |
-| **Unified brand tree** | `~/DTK` (site + brand + `vts` + media-hub) |
-| **Public site** | https://www.destroythekraken.com |
+| **Unified brand tree** | `~/DTK` (brand + `vts` + media-hub) |
 | **Who works here** | **`kraken` on um690** with **one Grok account** (no separate vtech Grok login for now) |
 | **Focus** | Products, services, field work, client delivery — **not** lab reorg |
 | **Updated** | 2026-07-21 |
@@ -49,11 +47,6 @@ NAS mirror (read-only for kraken today):
 `/mnt/systems_admin/vtech/valley-tech-support/`
 
 Working canon with git: **this tree**. Sync to NAS later when convenient — do not block product work on dual-write.
-
-## Public site
-
-Live: https://um690.taile52ad9.ts.net/vts/  
-Deploy tree (platform): `~/SovereignAid/k8s/websites/valley-tech-support/`
 
 ## Customer rule
 

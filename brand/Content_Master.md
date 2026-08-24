@@ -11,7 +11,7 @@ Full biography, homelab detail, and career direction: `DTK_About.md`
 
 **Public name:** Destroy the Kraken · **Joshua Hickman**  
 **Service area:** Omak, Okanogan, and surrounding Okanogan County
-**Portfolio / lab journal:** destroythekraken.com
+**Portfolio / lab journal:** [github.com/DestroyTheKraken](https://github.com/DestroyTheKraken)
 
 ### Why the name (client-facing language)
 
@@ -32,7 +32,7 @@ The name is personal. It also describes how I work.
 
 ---
 
-## Portfolio Positioning (recruiter / engineer — destroythekraken.com)
+## Portfolio positioning (recruiter / engineer)
 
 **Single takeaway:** I am an **AI-augmented systems builder** who turns Linux fundamentals, vendor research, and strict runbooks into deployed infrastructure — and I can repeat that process for clients.
 
@@ -280,7 +280,7 @@ Copy sections into:
 - Why Local
 - Contact form (Formspree) + Google Business + Facebook
 
-**Not on the client landing page:** outreach conversation script, full homelab architecture, recruiter/career targets (those stay in `DTK_About.md` and destroythekraken.com).
+**Not on the client landing page:** outreach conversation script, full homelab architecture, recruiter/career targets (those stay in `DTK_About.md`).
 
 ---
 

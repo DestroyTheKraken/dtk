@@ -1,6 +1,5 @@
 # Joshua Hickman · Destroy the Kraken
 
-**Public site:** [www.destroythekraken.com](https://www.destroythekraken.com)  
 **GitHub:** [github.com/DestroyTheKraken](https://github.com/DestroyTheKraken)  
 **Based in:** Omak, Okanogan County, Washington  
 
@@ -16,11 +15,13 @@ Most work is practical help for the **Okanogan Valley**. When a **Methow** vacat
 
 ---
 
-## Why “Destroy the Kraken”?
+## Why the name
 
-Studio brand for hard tech problems that feel impossible — not a crypto company or sports team.
+I started using **Destroy the Kraken** when I left a long first career and began learning Linux, networking, and IT operations. The field looked too large, the credentials too far away, and it was easy to believe the gap was too wide to cross. The Kraken, for me, is that story: a problem that looks too big to touch.
 
-You hire **Joshua Hickman**. Independent. Unaffiliated with any other “Kraken” brand.
+The name is a reminder to take the work apart anyway — read the docs, try the change, write down what happened, and keep going until the problem is ordinary. That is also how I treat a lab, a router, or a ticket: start with what is in front of you, and do not leave a mess for the next person.
+
+I work under my own name, Joshua Hickman. Destroy the Kraken is the studio label on this GitHub account and the homelab. It is not a product company, and it is not connected to any exchange, team, or other organization that uses the same word.
 
 ---
 
@@ -38,8 +39,8 @@ You hire **Joshua Hickman**. Independent. Unaffiliated with any other “Kraken�
 - **Package A** — Vacation rental network & guest experience (isolated guest Wi‑Fi, cabin mesh, owner notes)  
 - **Package B** — Sovereign property edge & monitoring (local control, cameras/network health)  
 
-Details: [services.html](https://www.destroythekraken.com/services.html)  
-All work is **scoped after conversation**. Pricing ranges on the site are illustrative only.
+Details: [services.html](services.html)  
+All work is **scoped after conversation**.
 
 ---
 
@@ -47,7 +48,7 @@ All work is **scoped after conversation**. Pricing ranges on the site are illust
 
 If I ask you to trust a process, I want to have practiced it myself first.
 
-- Lab overview: [lab-notes.html](https://www.destroythekraken.com/lab-notes.html)  
+- Lab overview: [lab-notes.html](lab-notes.html)  
 - Code/docs: [github.com/DestroyTheKraken/aide-os](https://github.com/DestroyTheKraken/aide-os)  
 - Not a school product · not multi-tenant hosting of client data  
 
@@ -59,9 +60,8 @@ If I ask you to trust a process, I want to have practiced it myself first.
 2. I call you back — no hard sell  
 3. We agree on a plan before work starts  
 
-- **Form:** [destroythekraken.com/#contact](https://www.destroythekraken.com/#contact)  
-- **Email:** [destroythekraken@gmail.com](mailto:destroythekraken@gmail.com)  
-- **Phone:** [509.557.7298](tel:+15095577298)  
+- **Job search:** [joshua.hickman1@gmail.com](mailto:joshua.hickman1@gmail.com)  
+- **Studio:** [destroythekraken@gmail.com](mailto:destroythekraken@gmail.com)  
 
 ---
 
@@ -92,4 +92,4 @@ Design brief for site optimization: operator `DESIGN.md` (Phase 1 foundation shi
 
 ## Field notes
 
-- [Remote family desktop (Omak → Austin)](https://www.destroythekraken.com/case-study-remote-family-desktop.html) — Ubuntu Cinnamon multi-user job over Tailscale
+- [Remote family desktop (Omak → Austin)](case-study-remote-family-desktop.html) — Ubuntu Cinnamon multi-user job over Tailscale

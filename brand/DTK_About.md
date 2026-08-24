@@ -14,7 +14,7 @@ aliases:
 
 **Joshua Hickman** — portfolio, homelab journal, and rural IT services  
 **Based in:** Omak, Washington (Okanogan County)  
-**Public lab / portfolio:** [destroythekraken.com](https://destroythekraken.com) · [github.com/DestroyTheKraken](https://github.com/DestroyTheKraken)
+**Portfolio:** [github.com/DestroyTheKraken](https://github.com/DestroyTheKraken)
 
 ---
 
@@ -116,14 +116,7 @@ My proving ground is a **four-node Tailscale mesh** on Starlink — the same arc
 - TP-Link Deco M3 mesh (trusted + IoT segments)
 - Tailscale tailnet for admin access; Cloudflare Tunnel for public hostnames (no open inbound ports)
 
-### Public services (live)
-
-- **destroythekraken.com** — portfolio (node1 via Traefik)
-- **hub.destroythekraken.com** — Nextcloud ValleyHub (node1)
-- **care.destroythekraken.com** — Grafana monitoring (um690)
-- **s3.destroythekraken.com** — MinIO (node3)
-
-Deploy and verify: `biz-cluster-deploy.sh --status` from um690.
+Lab inventory and network notes: [DestroyTheKraken/homelab](https://github.com/DestroyTheKraken/homelab).
 
 ---
 
@@ -166,10 +159,10 @@ Client work I accept must advance my craft and my career. At this stage of the j
 | Audience | What they need | Where |
 |----------|----------------|-------|
 | **Local clients** | Starlink, Nextcloud, rural IT packages | `index.html` (this repo) |
-| **Recruiters / engineers** | Resume, lab journal, project walkthroughs | destroythekraken.com (Hugo) |
+| **Recruiters / engineers** | Resume, lab notes, project walkthroughs | [GitHub](https://github.com/DestroyTheKraken) |
 | **You (Obsidian)** | Full story, SSOT, outreach notes | This vault — `DTK_About.md`, [[Content_Master]] |
 
-The portfolio is proof of **how I turn foundations + AI-assisted runbooks into live infrastructure** — and that I can do it again for clients. GitHub holds the runbooks. destroythekraken.com holds the story.
+The portfolio is proof of **how I turn foundations + AI-assisted runbooks into live infrastructure**. GitHub holds the runbooks and the lab write-up.
 
 **Portfolio site includes:**
 
@@ -187,7 +180,7 @@ Everything documented here is current and real. No filler.
 Call or text **509.557.7298** (business Google Voice) · contact form on client landing page
 
 **Recruiters, engineering managers, collaborators:**  
-[destroythekraken.com](https://destroythekraken.com) · GitHub: [DestroyTheKraken](https://github.com/DestroyTheKraken)
+[joshua.hickman1@gmail.com](mailto:joshua.hickman1@gmail.com) · GitHub: [DestroyTheKraken](https://github.com/DestroyTheKraken)
 
 **Fellow career-changers or homelab builders:**  
 I'm documenting this publicly so the journey helps someone else too. You're welcome here.

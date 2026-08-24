@@ -2,7 +2,7 @@
 
 ## Identity
 
-- **Brand:** DestroyTheKraken (DTK) — professional site, portfolio, installers.
+- **Brand:** DestroyTheKraken (DTK) — portfolio and installers.
 - **Service line:** Valley Tech Support (`vts/`) — rural IT / network / media center jobs.
 - **Product:** Sovereign Media Hub (`products/media-hub` → HickMedia).
 
@@ -17,13 +17,6 @@ Prefer **`~/DTK`** for brand + site + combined context.
 | `~/DTK/products/media-hub` | HickMedia installer (symlink) |
 | `~/HickMedia` | Same media-hub repo (direct) |
 | `~/valley-tech-support` | Same VTS tree (direct) |
-
-## Public site
-
-- URL: https://www.destroythekraken.com  
-- Publish: `bash ~/DTK/site/publish.sh`  
-- Tunnel: user unit `cloudflared-dtk.service` on um690  
-- Do not break `/hickmedia.sh` or `/hickmedia/*` paths  
 
 ## Safety
 
