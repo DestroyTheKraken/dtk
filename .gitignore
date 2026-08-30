@@ -17,3 +17,12 @@ site/dist/
 
 # do not nest external symlinks
 vts-external/
+
+# --- secrets / inventory dumps ---
+.env
+*.pem
+id_rsa*
+*.key
+tailscale-status.json
+**/*secret*
+**/*credential*
